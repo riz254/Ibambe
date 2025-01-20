@@ -41,7 +41,7 @@ export const eventList = [
     name: "Concours d’Elegance",
     date: "April, 2025",
     location: "Nairobi, Kenya",
-    price: "$199",
+    price: "Freee",
     image: carEvent,
   },
   {
@@ -57,7 +57,7 @@ export const eventList = [
     name: "Book sale",
     date: "May 5, 2025",
     location: "New York, NY",
-    price: "Free",
+    price: "Freee",
     image: bookEvent,
   },
   {
@@ -65,7 +65,7 @@ export const eventList = [
     name: "Tech Conference 2025",
     date: "March 15, 2025",
     location: "San Francisco, CA",
-    price: "$199",
+    price: "Freee",
     image: carEvent,
   },
   {
@@ -81,7 +81,7 @@ export const eventList = [
     name: "Art Exhibition",
     date: "May 5, 2025",
     location: "New York, NY",
-    price: "Free",
+    price: "Freee",
     image: bookEvent,
   },
 

@@ -64,7 +64,9 @@ export default function EventsPage() {
       <Navbar />
       <div className="container text-center mx-auto py-4 px-6 md:px-20 lg:px-32 my-20 w-full overflow-hidden">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-bold">{events.length} Events</h2>
+          <h2 className="text-lg font-bold text-white  font-sans">
+            {events.length} Events
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 h-fit w-full place-content-end">
@@ -88,23 +90,33 @@ export default function EventsPage() {
                     />
                   </div>
 
-                  <div className="grid items-center justify-between">
-                    <div className="flex">
-                      <span className="material-icons text-purple-800 mr-2">
-                        arrow_forward_ios
-                      </span>
-                      <h2 className="font-bold text-xl mb-2">{event.name}</h2>
+                  <div className="grid">
+                    <div className="flex justify-evenly">
+                      <h2 className="font-bold font-sans text-3xl mb-2">
+                        {" "}
+                        {event.name}
+                      </h2>
                     </div>
-                    <div className="flex items-center text-gray-600 mb-2">
-                      <span className="material-icons text-purple-800 mr-2">
+                    <div className="flex items-center text-gray-900 mb-2">
+                      <span className="material-icons text-purple-800 mx-2">
                         location_on
                       </span>
-                      <p>{event.location}</p>
+                      <p className="font-serif ">{event.location}</p>
+                    </div>
+                    <div className="flex items-center text-gray-600 mb-2">
+                      <div className="flex items-center text-gray-600">
+                        <span className="material-icons text-purple-800 mx-2">
+                          calendar_month
+                        </span>
+                        <p className="font-sans font-bold text-gray-900">
+                          {event.date.split("T")[0] || ""}
+                        </p>
+                      </div>
                     </div>
                     {/* Arrow Icon */}
                     <div className="flex items-center text-gray-600">
                       <div className="flex items-center text-gray-600">
-                        <span className="material-icons text-purple-800 mr-2">
+                        <span className="material-icons text-purple-800 mx-2">
                           attach_money
                         </span>
                         <p>Freee</p>
@@ -112,24 +124,8 @@ export default function EventsPage() {
                     </div>
                   </div>
                 </button>
-                <div className="m-5">
-                  <p className="text-xs text-gray-400 mt-2">{event.date}</p>
-                </div>
-                <div className=" grid">
-                  <Link
-                    className=" bg-purple-800 hover:bg-purple-700 text-white font-bold py-2 px 
-                  -4 rounded"
-                    to="/tickets"
-                  >
-                    Sold: {event.totalTicketsPurchased}
-                  </Link>
 
-                  <span bold fontSize={16} color="green">
-                    Validated: {event.totalTicketsEntered}
-                  </span>
-                </div>
-
-                <div className="mt-5">
+                <div className="my-5">
                   <button
                     className="bg-purple-800 hover:bg-purple-700 text-white font-bold py-2 px 
                   -4 rounded"
@@ -138,6 +134,21 @@ export default function EventsPage() {
                   >
                     Buy Ticket
                   </button>
+                </div>
+
+                <div className=" grid ">
+                  <Link
+                    className=" bg-purple-800 hover:bg-purple-700 text-white font-bold py-2 px 
+                  -4 rounded"
+                    to="/tickets"
+                  >
+                    Sold: {event.totalTicketsPurchased}
+                    <div className="underline font-serif m-2">View Tickets</div>
+                  </Link>
+
+                  <span bold fontSize={16} color="green">
+                    Validated: {event.totalTicketsEntered}
+                  </span>
                 </div>
               </div>
             ))

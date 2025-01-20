@@ -40,12 +40,13 @@ const New = () => {
 
   return (
     <div
-      className="bg-purple-200 bg-cover bg-center bg-no-repeat w-full h-full min-h-screen"
+      className=" bg-cover bg-center bg-no-repeat w-full h-full min-h-screen"
       style={{ backgroundImage: `url('/download (2).jpeg')` }}
     >
       <Navbar />
-      <div className="mt-10 flex justify-center items-center min-h-screen">
-        <div className="bg-white p-8 rounded-lg shadow-lg w-96">
+
+      <div className=" flex justify-center items-center min-h-screen">
+        <div className="bg-white p-8 rounded-lg shadow-lg w-100  mt-24 mb-24">
           <h2 className="text-3xl font-bold mb-6 text-center text-purple-700">
             Add Event
           </h2>
@@ -54,22 +55,23 @@ const New = () => {
           )}
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label className="block text-sm font-medium mb-2" htmlFor="name">
+              <label className="block text-sm font-bold mb-2" htmlFor="name">
                 Event Name
               </label>
               <input
                 id="name"
                 type="text"
                 value={name}
+                autoComplete="off"
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 font-sans"
                 placeholder="Enter event name"
                 disabled={isSubmitting}
               />
             </div>
             <div className="mb-4">
               <label
-                className="block text-sm font-medium mb-2"
+                className="block text-sm font-bold mb-2"
                 htmlFor="location"
               >
                 Event Location
@@ -78,14 +80,15 @@ const New = () => {
                 id="location"
                 type="text"
                 value={location}
+                autoComplete="off"
                 onChange={(e) => setLocation(e.target.value)}
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 font-sans"
                 placeholder="Enter event location"
                 disabled={isSubmitting}
               />
             </div>
             <div className="mb-4">
-              <label className="block text-sm font-medium mb-2" htmlFor="date">
+              <label className="block text-sm font-bold mb-2" htmlFor="date">
                 Event Date
               </label>
               <input
@@ -93,7 +96,7 @@ const New = () => {
                 type="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 font-sans font-thin "
                 disabled={isSubmitting}
               />
             </div>

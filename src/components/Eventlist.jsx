@@ -26,12 +26,14 @@ const Eventlist = () => {
 
             {/* Event Details */}
             <div className="p-6">
-              <h2 className="font-bold text-xl mb-2">{event.name}</h2>
+              <h2 className="font-bold font-serif text-xl mb-2">
+                {event.name}
+              </h2>
               <div className="flex items-center text-gray-600 mb-2">
                 <span className="material-icons text-purple-800 mr-2">
                   location_on
                 </span>
-                <p>{event.location}</p>
+                <p className="font-serif text-left">{event.location}</p>
               </div>
               <div className="flex items-center text-gray-600">
                 <span className="material-icons text-purple-800 mr-2">
@@ -39,15 +41,17 @@ const Eventlist = () => {
                 </span>
                 <p>{event.price}</p>
               </div>
-              <Link
-                to={`/events/${event.id}`}
-                className="bg-purple-800 hover:bg-purple-900 text-white font-bold py-2 px-4 mt-4 inline-block rounded"
-              >
-                View Details
-              </Link>
-              <button className="bg-purple-800 hover:bg-purple-900 text-white font-bold py-2 px-4 mt-4 rounded">
-                Buy Ticket
-              </button>
+              <div className="container grid">
+                <Link
+                  to="/events"
+                  className="bg-purple-900 hover:bg-purple-700 text-white font-bold py-2 px-4 mt-4 inline-block rounded"
+                >
+                  View Details
+                </Link>
+                <button className="bg-purple-900 hover:bg-purple-700 text-white font-bold py-2 px-4 mt-4 inline-block rounded">
+                  Buy Ticket
+                </button>
+              </div>
             </div>
           </div>
         ))}

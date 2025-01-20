@@ -21,50 +21,54 @@ const Navbar = () => {
   return (
     <div className="absolute top-0 left-0 w-screen z-10 ">
       <div className=" mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-36  text-white">
-        <div className="relative -top-16 -left-14 h-0 ">
-          {" "}
+        <div className="relative -top-14 -left-14 h-0 ">
           <Link to="/">
             <img src="/iBAMBE__1_-removebg-preview.png" alt="" />{" "}
           </Link>
         </div>
-        <ul className="hidden md:flex space-x-8">
+        <ul className="hidden md:flex space-x-8  ">
           <a
             href="/"
-            className="cursor-pointer text-neutral-950  hover:text-purple-900 hover:text-lg"
+            className="cursor-pointer text-neutral-950  hover:text-purple-900 hover:text-lg hover:underline"
           >
             Home
           </a>
           <a
             href="/#Events"
-            className="cursor-pointer text-neutral-950 hover:text-purple-900 hover:text-lg"
+            className="cursor-pointer text-neutral-950 hover:text-purple-900 hover:text-lg hover:underline"
           >
             Events
           </a>
           <a
             href="/About"
-            className="cursor-pointer text-neutral-950 hover:text-purple-900 hover:text-lg"
+            className="cursor-pointer text-neutral-950 hover:text-purple-900 hover:text-lg hover:underline"
           >
             About
           </a>
           <a
             href="/Contact"
-            className="cursor-pointer text-neutral-950 hover:text-purple-900 hover:text-lg"
+            className="cursor-pointer text-neutral-950 hover:text-purple-900 hover:text-lg hover:underline"
           >
             Contact
           </a>
         </ul>
-        <div className="flex">
+        <div className="flex font-serif ml-10 -mr-10">
           {/* <button className="hidden md:block bg-white text-purple-800 px-4 py-2 rounded-full ml-4 hover:bg-purple-800 hover:text-white">
             Sign Up
           </button> */}
           <button className="hidden md:block bg-violet-900 text-white px-4 py-2 rounded-full ml-4 hover:bg-white hover:text-purple-900">
-            Admin LogIn
+            <Link to="/new" className="font-sans ">
+              Create Event
+            </Link>
           </button>
           <button
             onClick={logout}
             className="hidden md:block bg-white text-purple-800 px-4 py-2 rounded-full ml-4 hover:bg-purple-800 hover:text-white"
           >
             Log out
+          </button>
+          <button className="hidden md:block bg-violet-900 text-white px-4 py-2 rounded-full ml-4 hover:bg-white hover:text-purple-900">
+            Admin LogIn
           </button>
         </div>
         <img
@@ -93,30 +97,38 @@ const Navbar = () => {
           <a
             onClick={() => setShowMobileMenu(false)}
             href="/"
-            className="px-4 py-2 rounded-full inline-block  hover:text-gray-300 hover:text-lg"
+            className="px-4 py-2 rounded-full inline-block  hover:text-gray-900 hover:text-lg"
           >
             Home
           </a>
           <a
             onClick={() => setShowMobileMenu(false)}
             href="/#Events"
-            className="px-4 py-2 rounded-full inline-block  hover:text-gray-300 hover:text-lg"
+            className="px-4 py-2 rounded-full inline-block  hover:text-gray-900 hover:text-lg"
           >
             Events
           </a>
           <a
             onClick={() => setShowMobileMenu(false)}
             href="/About"
-            className="px-4 py-2 rounded-full inline-block  hover:text-gray-300 hover:text-lg"
+            className="px-4 py-2 rounded-full inline-block  hover:text-gray-900 hover:text-lg"
           >
             About
           </a>
           <a
             onClick={() => setShowMobileMenu(false)}
             href="/Contact"
-            className="px-4 py-2 rounded-full inline-block  hover:text-gray-300 hover:text-lg"
+            className="px-4 py-2 rounded-full inline-block  hover:text-gray-900 hover:text-lg"
           >
             Contact
+          </a>
+
+          <a
+            onClick={() => setShowMobileMenu(false)}
+            href="/new"
+            className="px-4 py-2 rounded-full inline-block  hover:text-gray-900 hover:text-lg"
+          >
+            Create an Event
           </a>
         </ul>
       </div>

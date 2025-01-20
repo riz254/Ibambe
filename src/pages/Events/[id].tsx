@@ -99,9 +99,9 @@ const EventDetailsPage = () => {
     >
       {" "}
       <Navbar />
-      <div className="p-6 max-w-4xl mx-auto">
+      <div className="p-6 ">
         {eventData ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-fit w-full place-content-end mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-fit w-full place-content-end mt-20 bg-purple-200">
             <div>
               {/* Display event image */}
               <img
@@ -111,80 +111,106 @@ const EventDetailsPage = () => {
               />
             </div>
             <div>
-              <h2 className="text-2xl font-bold s">Name:</h2>
-              <h2 className="text-3xl font-sans m-3 text-center">
-                {" "}
-                {eventData.name}
-              </h2>
-              <p className="text-2xl font-bold">Where:</p>
-              <p className="text-3xl font-sans m-3 text-center">
-                {" "}
-                {eventData.location}
-              </p>
-              <p className="text-2xl font-bold">When:</p>
-              <p className="text-3xl font-sans m-3 text-center">
-                {new Date(eventData.date).toLocaleString()}
-              </p>
-              {/* Format the date */}
-              <p className="text-2xl font-bold ">Price:</p>
-              <p className="text-3xl m-3 text-center font-thin"> Free</p>
+              {/* Display event details */}
+              <div className="container text-center">
+                <h2 className="text-3xl font-serif underline  font-bold m-3 pl-10 ">
+                  {" "}
+                  {eventData.name}
+                </h2>
+              </div>
+              <div className="container">
+                <h2 className=" font-bold ">Description:</h2>
+
+                <p className="text-xl font-sans m-3 pl-10">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+                  obcaecati itaque suscipit libero ullam reprehenderit placeat
+                  tempore ea cupiditate quos.
+                </p>
+              </div>
+
+              <div className="container">
+                <p className=" font-bold">Where:</p>
+                <p className="text-xl font-sans m-3 pl-10">
+                  {" "}
+                  {eventData.location}
+                </p>
+              </div>
+              <div className="container">
+                <p className="font-bold">When:</p>
+                <p className="text-xl font-sans m-3 pl-10">
+                  {eventData.date.split("T")[0] || ""}
+                </p>
+                {/* Format the date */}
+              </div>
+              <p className=" font-bold ">Price:</p>
+              <p className="text-xl m-3 pl-10 font-thin"> Free</p>
             </div>
           </div>
         ) : (
           <p>Loading event details...</p>
         )}
 
-        <h2 className="text-3xl font-bold mb-6 underline ">Edit Event</h2>
+        <div className="container bg-white relative  justify-around p-4 mx-auto w-full max-w-md mt-5">
+          <h2 className="text-3xl font-bold mb-6 text-center underline">
+            Edit Event
+          </h2>
+          {error && <p className="text-red-500 text-center">{error}</p>}
 
-        {error && <p className="text-red-500 text-center">{error}</p>}
+          <div className="space-y-6 bg-white p-3">
+            <form action="">
+              <div className="mb-4">
+                <label className="block text-sm font-bold mb-2" htmlFor="name">
+                  Event Name
+                </label>
+                <input
+                  className="w-full py-2 border-separate border-black font-sans  rounded-lg hover:bg-purple-300 p-5 "
+                  value={eventData?.name || ""}
+                  onChange={(e) => updateField("name", e.target.value)}
+                  placeholder="Event Name"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block text-sm font-bold mb-2"
+                  htmlFor="location"
+                >
+                  Event Location
+                </label>
 
-        <div className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Event Name
-            </label>
-            <input
-              value={eventData?.name || ""}
-              onChange={(e) => updateField("name", e.target.value)}
-              placeholder="Event Name"
-            />
-          </div>
+                <input
+                  className="w-full py-2 border-separate border-black font-sans  rounded-lg hover:bg-purple-300 p-5"
+                  value={eventData?.location || ""}
+                  onChange={(e) => updateField("location", e.target.value)}
+                  placeholder="Event Location"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-bold mb-2" htmlFor="date">
+                  Event Date
+                </label>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Location
-            </label>
-            <input
-              value={eventData?.location || ""}
-              onChange={(e) => updateField("location", e.target.value)}
-              placeholder="Event Location"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Date
-            </label>
-            <input
-              type="date"
-              value={eventData?.date?.split("T")[0] || ""}
-              onChange={(e) => updateField("date", e.target.value)}
-            />
-          </div>
-
-          <div className="flex justify-between gap-4 mt-6">
-            <button
-              onClick={onSubmitChanges}
-              className="w-1/2 bg-blue-600 text-white py-2 rounded"
-            >
-              {isSubmitting ? "Saving Changes..." : "Save Event"}
-            </button>
-            <button
-              onClick={onDelete}
-              className="w-1/2 bg-red-600 text-white py-2 rounded"
-            >
-              Delete Event
-            </button>
+                <input
+                  className="w-full py-2 border-separate border-black font-sans  rounded-lg hover:bg-purple-300 p-5"
+                  type="date"
+                  value={eventData?.date?.split("T")[0] || ""}
+                  onChange={(e) => updateField("date", e.target.value)}
+                />
+              </div>
+            </form>
+            <div className="flex justify-between gap-4 mt-6">
+              <button
+                onClick={onSubmitChanges}
+                className="w-1/2 bg-blue-600 text-white py-2 rounded hover:text-lg"
+              >
+                {isSubmitting ? "Saving Changes..." : "Save Event"}
+              </button>
+              <button
+                onClick={onDelete}
+                className="w-1/2 bg-red-600 text-white py-2 rounded hover:text-lg"
+              >
+                Delete Event
+              </button>
+            </div>
           </div>
         </div>
       </div>
