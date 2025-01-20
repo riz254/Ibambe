@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid flex-col md:flex-row justify-evenly  items-center">
           {/* Navigation Links */}
-          <ul className=" space-x-10 mb-3 md:mb-0">
+          <ul className=" space-y-5 mb-3 md:flex md:items-baseline md:space-x-10 space-x-1 grid justify-evenly ">
             <a
               href="/"
               className=" hover:underline hover:text-gray-300 hover:text-2xl font-semibold  "
@@ -21,13 +21,13 @@ const Footer = () => {
               Events
             </a>
             <a
-              href="/About"
+              href="/"
               className=" hover:underline hover:text-gray-300 hover:text-2xl font-semibold "
             >
               About
             </a>
             <a
-              href="/Contact"
+              href="/"
               className="hover:underline hover:text-gray-300 hover:text-2xl font-semibold "
             >
               Contact

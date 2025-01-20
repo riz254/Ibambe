@@ -21,12 +21,12 @@ const Navbar = () => {
   return (
     <div className="absolute top-0 left-0 w-screen z-10 ">
       <div className=" mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-36  text-white">
-        <div className="relative -top-14 -left-14 h-0 ">
+        <div className="relative md:-left-14 h-0 w-fit mx-auto -top-14">
           <Link to="/">
-            <img src="/iBAMBE__1_-removebg-preview.png" alt="" />{" "}
+            <img src="/iBAMBE__1_-removebg-preview.png" alt="" />
           </Link>
         </div>
-        <ul className="hidden md:flex space-x-8  ">
+        <ul className="hidden md:flex space-x-8  mt-6 ">
           <a
             href="/"
             className="cursor-pointer text-neutral-950  hover:text-purple-900 hover:text-lg hover:underline"
@@ -40,28 +40,28 @@ const Navbar = () => {
             Events
           </a>
           <a
-            href="/About"
+            href="/"
             className="cursor-pointer text-neutral-950 hover:text-purple-900 hover:text-lg hover:underline"
           >
             About
           </a>
           <a
-            href="/Contact"
+            href="/"
             className="cursor-pointer text-neutral-950 hover:text-purple-900 hover:text-lg hover:underline"
           >
             Contact
           </a>
         </ul>
-        <div className="flex font-serif ml-10 -mr-10">
+        <div className="flex font-serif ml-10 ">
           {/* <button className="hidden md:block bg-white text-purple-800 px-4 py-2 rounded-full ml-4 hover:bg-purple-800 hover:text-white">
             Sign Up
           </button> */}
-          <button className="hidden md:block bg-violet-900 text-white px-4 py-2 rounded-full ml-4 hover:bg-white hover:text-purple-900">
+          <button className="hidden md:block bg-violet-900 text-white px-4 py-2 rounded-full mt-4 hover:bg-white hover:text-purple-900">
             <Link to="/new" className="font-sans ">
-              Create Event
+              Create an Event
             </Link>
           </button>
-          <button
+          {/* <button
             onClick={logout}
             className="hidden md:block bg-white text-purple-800 px-4 py-2 rounded-full ml-4 hover:bg-purple-800 hover:text-white"
           >
@@ -69,7 +69,7 @@ const Navbar = () => {
           </button>
           <button className="hidden md:block bg-violet-900 text-white px-4 py-2 rounded-full ml-4 hover:bg-white hover:text-purple-900">
             Admin LogIn
-          </button>
+          </button> */}
         </div>
         <img
           onClick={() => setShowMobileMenu(true)}
