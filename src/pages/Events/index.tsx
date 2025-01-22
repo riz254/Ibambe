@@ -58,7 +58,7 @@ export default function EventsPage() {
 
   return (
     <div
-      className="bg-purple-200  bg-cover bg-center bg-no-repeat absolute w-full h-screen "
+      className="bg-purple-200  bg-cover bg-center bg-no-repeat absolute w-full h-full overflow-y-auto overflow-x-hidden"
       style={{ backgroundImage: `url('/download (2).jpeg')` }}
     >
       <Navbar />
@@ -128,7 +128,7 @@ export default function EventsPage() {
                 <div className="my-5">
                   <button
                     className="bg-purple-800 hover:bg-purple-700 text-white font-bold py-2 px 
-                  -4 rounded"
+                  -4 rounded font-sans p-8"
                     disabled={isLoading}
                     onClick={() => buyTicket(event.id)}
                   >

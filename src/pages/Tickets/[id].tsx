@@ -29,7 +29,7 @@ const TicketDetailScreen = () => {
 
   return (
     <div
-      className=" bg-cover bg-center bg-no-repeat absolute w-full h-fit opacity-100"
+      className=" bg-cover bg-center bg-no-repeat absolute w-full h-full overflow-y-auto overflow-x-hidden"
       style={{ backgroundImage: `url('/download (2).jpeg')` }}
     >
       <Navbar />

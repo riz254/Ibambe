@@ -40,7 +40,7 @@ const New = () => {
 
   return (
     <div
-      className=" bg-cover bg-center bg-no-repeat w-full h-full min-h-screen"
+      className=" bg-cover bg-center bg-no-repeat absolute w-full h-full overflow-y-auto overflow-x-hidden"
       style={{ backgroundImage: `url('/download (2).jpeg')` }}
     >
       <Navbar />

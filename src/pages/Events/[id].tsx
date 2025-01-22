@@ -94,7 +94,7 @@ const EventDetailsPage = () => {
 
   return (
     <div
-      className="bg-purple-200  bg-cover bg-center bg-no-repeat absolute w-full h-fit opacity-100"
+      className="bg-purple-200  bg-cover bg-center bg-no-repeat absolute w-full h-full overflow-y-auto overflow-x-hidden"
       style={{ backgroundImage: `url('/download (2).jpeg')` }}
     >
       {" "}

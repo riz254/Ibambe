@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div
-      className="min-h-screen mb-4 bg-cover bg-center bg-no-repeat overflow-hidden flex items-center w-full"
-      style={{ backgroundImage: `url('/download (2).jpeg')` }}
+      className="min-h-screen h-full sticky mb-4 bg-cover bg-center bg-no-repeat overflow-hidden flex items-center w-full"
+      style={{
+        backgroundImage: `url('/download (2).jpeg')`,
+        height: "100%",
+      }}
       id="Header"
     >
       <Navbar />
